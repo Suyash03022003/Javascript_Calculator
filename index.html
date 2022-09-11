@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome!</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            
+        }
+
+        input[type='text'] {
+            padding: 30px;
+            width: 100%;
+        }
+
+        input[type='button'] {
+            margin: 3px;
+            padding: 20px 25px;
+            font-size: medium;
+            background-color: white;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Calculator</h1>
+        <div class="calc">
+            <table>
+                <tr>
+                    <td colspan="4"><input type="text" id="textarea" value=""></td>
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                    <td><input type="button" value="C" onclick="clr()"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="7" onclick="display('7')"></td>
+                    <td><input type="button" value="8" onclick="display('8')"></td>
+                    <td><input type="button" value="9" onclick="display('9')"></td>
+                    <td><input type="button" value="+" onclick="display('+')"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="4" onclick="display('4')"></td>
+                    <td><input type="button" value="5" onclick="display('5')"></td>
+                    <td><input type="button" value="6" onclick="display('6')"></td>
+                    <td><input type="button" value="- " onclick="display('-')"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="1" onclick="display('1')"></td>
+                    <td><input type="button" value="2" onclick="display('2')"></td>
+                    <td><input type="button" value="3" onclick="display('3')"></td>
+                    <td><input type="button" value="*" onclick="display('*')"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="0" onclick="display('0')"></td>
+                    <td><input type="button" value=" ." onclick="display('.')"></td>
+                    <td><input type="button" value="=" onclick="result()"></td>
+                    <td><input type="button" value="/" onclick="display('/')"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        function display(val) {
+            document.getElementById("textarea").value+=val;
+        }
+        function result() {
+            var text = document.getElementById("textarea").value;
+            var re = eval(text);
+            document.getElementById("textarea").value = re;
+        }
+        function clr() {
+            console.log("Hello World!");
+            document.getElementById("textarea").value = "";
+        }
+    </script>
+</body>
+</html>
